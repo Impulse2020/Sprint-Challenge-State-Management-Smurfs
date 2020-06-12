@@ -2,7 +2,11 @@ import{
     FETCH_START,
     FETCH_SUCCESS,
     FETCH_FAILURE,
-    fetchSmurfs
+    fetchSmurfs,
+    POST_START,
+    POST_SUCCESS,
+    POST_FAILURE,
+    POSTsmurfs
 } from '../actions/actions';
 
 
