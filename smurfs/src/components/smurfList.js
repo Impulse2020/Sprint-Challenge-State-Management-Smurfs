@@ -1,27 +1,33 @@
 import React, {Component, useEffect} from 'react';
-import smurfCard from './smurfCard';
-import axios from 'axios';
+import SmurfCard from './smurfCard';
+
 import {fetchSmurfs} from '../actions/actions';
 import {connect} from 'react-redux';
 
 
 
-const smurfList = (props) =>{
+const SmurfList = (props) =>{
     
- {/*    useEffect(() =>{
-        props.fetchPlayers()
+    useEffect(() => {
+        props.fetchSmurfs()
     }, [])
 
-*/}
 
+    {useEffect(() => {
+        props.fetchSmurfs()
+    }, [])}
 
     return(
+         
         <div>
-            <smurfCard />
+            {props.smurfs.map((smurf)=>(
+                <SmurfCard key={smurf.id , smurf={smurf} }/>
+    ))};
+            
         </div>
     )
 }
- {/*  
+
 const mapStateToProps = (state) =>{
     return{
         smurfs:state.smurfs,
@@ -29,5 +35,5 @@ const mapStateToProps = (state) =>{
         error: state.error
     }
 }
-*/}
-export default smurfList
+
+export default connect (mapStateToProps, fetchSmurfs)(SmurfList);

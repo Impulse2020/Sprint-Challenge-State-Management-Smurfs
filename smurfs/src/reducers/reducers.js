@@ -6,7 +6,7 @@ import{
 } from '../actions/actions';
 
 
-let payload= "";
+
 
 
 
@@ -17,7 +17,7 @@ const initialStore = {
 }
 
 
-const reducer = (state, action) => {
+const reducer = (state = initialStore, action) => {
     switch(action.type){
         case "FETCH_START":
             return{
@@ -36,7 +36,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 isFETCHING:false,
-                error: payload.type
+                error: action.payload
             }
         default:
             return state;

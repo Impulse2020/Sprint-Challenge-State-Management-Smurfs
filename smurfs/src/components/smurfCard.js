@@ -1,7 +1,7 @@
 import React from 'react';
-import smurfCard from './smurfCard';
 
-const smurfList = () =>{
+
+const SmurfList = () =>{
 
     return(
         <div>
@@ -11,4 +11,4 @@ const smurfList = () =>{
     )
 }
 
-export default smurfList;
+export default SmurfList;
