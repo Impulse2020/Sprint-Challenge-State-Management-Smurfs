@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import axios from 'axios';
 
 import SmurfList from './components/smurfList';
 import SmurfForm from './components/smurfForm';
-import {POSTsmurfs} from './actions/actions';
+
 
 
 import "./App.css";
@@ -15,7 +14,7 @@ class App extends Component {
         <div>Welcome to your state management version of Smurfs!</div>
         <div>Start inside of your `src/index.js` file!</div>
         <SmurfList />
-        <SmurfForm POSTsmurfs={POSTsmurfs} />
+        <SmurfForm />
       </div>
     );
   }

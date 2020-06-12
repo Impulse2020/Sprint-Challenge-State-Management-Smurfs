@@ -2,11 +2,9 @@ import {
     FETCH_START,
     FETCH_SUCCESS,
     FETCH_FAILURE,
-    fetchSmurfs,
     POST_START,
     POST_SUCCESS,
     POST_FAILURE,
-    POSTsmurfs
 } from '../actions/actions';
 
 
@@ -23,39 +21,39 @@ const initialStore = {
 
 const reducer = (state = initialStore, action) => {
     switch (action.type) {
-        case "FETCH_START":
+        case FETCH_START:
             return {
                 ...state,
                 isFETCHING: true,
                 error: ''
             }
-        case "FETCH_SUCCESS":
+        case FETCH_SUCCESS:
             return {
                 ...state,
                 smurfs: action.payload,
                 isFETCHING: false,
                 error: ''
             }
-        case "FETCH_FAILURE":
+        case FETCH_FAILURE:
             return {
                 ...state,
                 isFETCHING: false,
                 error: action.payload
             }
-        case "POST_START":
+        case POST_START:
             return {
                 ...state,
                 isFETCHING: true,
                 error: ''
             }
-        case "POST_SUCCESS":
+        case POST_SUCCESS:
             return {
                 ...state,
                 smurfs: action.payload,
                 isFETCHING: false,
                 error: ''
             }
-        case "POST_FAILURE":
+        case POST_FAILURE:
             return {
                 ...state,
                 isFETCHING: false,
