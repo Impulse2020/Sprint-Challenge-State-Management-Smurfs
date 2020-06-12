@@ -1,39 +1,37 @@
-import React, {Component, useEffect} from 'react';
+import React, { useEffect } from 'react';
 import SmurfCard from './smurfCard';
 
-import {fetchSmurfs} from '../actions/actions';
-import {connect} from 'react-redux';
+import { fetchSmurfs } from '../actions/actions';
+import { connect } from 'react-redux';
 
 
 
-const SmurfList = (props) =>{
-    
+const SmurfList = (props) => {
+
     useEffect(() => {
         props.fetchSmurfs()
     }, [])
 
 
-    {useEffect(() => {
-        props.fetchSmurfs()
-    }, [])}
 
-    return(
-         
+    return (
+
         <div>
-            {props.smurfs.map((smurf)=>(
-                <SmurfCard key={smurf.id , smurf={smurf} }/>
-    ))};
-            
+            {props.smurfs.map((smurf) => (
+                <SmurfCard key={smurf.id} smurf={smurf} />
+          
+            ))}
+
         </div>
     )
 }
 
-const mapStateToProps = (state) =>{
-    return{
-        smurfs:state.smurfs,
+const mapStateToProps = (state) => {
+    return {
+        smurfs: state.smurfs,
         isFETCHING: state.isFETCHING,
         error: state.error
     }
 }
 
-export default connect (mapStateToProps, fetchSmurfs)(SmurfList);
+export default connect(mapStateToProps, { fetchSmurfs })(SmurfList);

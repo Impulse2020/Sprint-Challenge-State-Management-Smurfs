@@ -1,4 +1,4 @@
-import{
+import {
     FETCH_START,
     FETCH_SUCCESS,
     FETCH_FAILURE,
@@ -16,30 +16,49 @@ import{
 
 const initialStore = {
     smurfs: [],
-    isFETCHING:"",
-    error:'',
+    isFETCHING: false,
+    error: '',
 }
 
 
 const reducer = (state = initialStore, action) => {
-    switch(action.type){
+    switch (action.type) {
         case "FETCH_START":
-            return{
+            return {
                 ...state,
                 isFETCHING: true,
                 error: ''
             }
         case "FETCH_SUCCESS":
-            return{
+            return {
                 ...state,
                 smurfs: action.payload,
-                isFETCHING:false,
-                error:''
+                isFETCHING: false,
+                error: ''
             }
         case "FETCH_FAILURE":
             return {
                 ...state,
-                isFETCHING:false,
+                isFETCHING: false,
+                error: action.payload
+            }
+        case "POST_START":
+            return {
+                ...state,
+                isFETCHING: true,
+                error: ''
+            }
+        case "POST_SUCCESS":
+            return {
+                ...state,
+                smurfs: action.payload,
+                isFETCHING: false,
+                error: ''
+            }
+        case "POST_FAILURE":
+            return {
+                ...state,
+                isFETCHING: false,
                 error: action.payload
             }
         default:
