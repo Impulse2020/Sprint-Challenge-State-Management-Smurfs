@@ -10,7 +10,7 @@ const SmurfList = (props) => {
 
     useEffect(() => {
         props.fetchSmurfs()
-    }, [])
+    }, [props])
 
 
 

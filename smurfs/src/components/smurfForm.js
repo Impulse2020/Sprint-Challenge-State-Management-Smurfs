@@ -22,18 +22,18 @@ const SmurfForm = () =>{
     }
     
     const handleSubmit = event =>{
-       
+        event.preventDefault();
         POSTsmurfs(smurf);
         
-        event.preventDefault();
+        
     }
 
 
 return(
     <form className="smurfForm" >
-        Name: <input name="name" type="text" onChange={inputHandler} className="input" />
-        height: <input name="height"  type="text" onChange={inputHandler} className="input" />
-        age: <input name="age"  type="text" onChange={inputHandler} className="input" />
+        Name: <input name="name" type="text" value={smurf.name}onChange={inputHandler} className="input" />
+        height: <input name="height" value={smurf.height} type="text" onChange={inputHandler} className="input" />
+        age: <input name="age" value={smurf.age} type="text" onChange={inputHandler} className="input" />
              <button onSubmit={handleSubmit}>Add Smurf</button>
         
 
